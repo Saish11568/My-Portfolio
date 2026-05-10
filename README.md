@@ -43,7 +43,7 @@ A modern, high-performance portfolio website built with Next.js, Framer Motion, 
    ```
 
 4. **Open the site:**
-   Navigate to [http://localhost:3000](http://localhost:3000) in your browser.
+   Navigate to [https://saish11568.github.io/My-Portfolio/](https://saish11568.github.io/My-Portfolio/) in your browser.
 
 ## 📁 Project Structure
 
