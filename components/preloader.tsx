@@ -19,10 +19,14 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
     let current = 0
     const interval = setInterval(() => {
       current += increment
+
       if (current >= 100) {
         setCount(100)
         clearInterval(interval)
-        setTimeout(() => setPhase("reveal"), 300)
+
+        setTimeout(() => {
+          setPhase("reveal")
+        }, 300)
       } else {
         setCount(Math.floor(current))
       }
@@ -38,6 +42,7 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
         setPhase("exit")
         setTimeout(onComplete, 1000)
       }, 1800)
+
       return () => clearTimeout(timeout)
     }
   }, [phase, onComplete])
@@ -55,26 +60,37 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
             <motion.div
               className="absolute top-1/4 -left-1/4 w-[600px] h-[600px] rounded-full"
               style={{
-                background: "radial-gradient(circle, rgba(45,212,191,0.15) 0%, transparent 70%)",
+                background:
+                  "radial-gradient(circle, rgba(45,212,191,0.15) 0%, transparent 70%)",
               }}
               animate={{
                 x: [0, 100, 0],
                 y: [0, 50, 0],
                 scale: [1, 1.2, 1],
               }}
-              transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
             />
+
             <motion.div
               className="absolute bottom-1/4 -right-1/4 w-[500px] h-[500px] rounded-full"
               style={{
-                background: "radial-gradient(circle, rgba(45,212,191,0.1) 0%, transparent 70%)",
+                background:
+                  "radial-gradient(circle, rgba(45,212,191,0.1) 0%, transparent 70%)",
               }}
               animate={{
                 x: [0, -80, 0],
                 y: [0, -60, 0],
                 scale: [1.2, 1, 1.2],
               }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
             />
           </div>
 
@@ -111,7 +127,11 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
                   <motion.div
                     className="absolute -inset-20 rounded-full border border-primary/20"
                     animate={{ rotate: 360 }}
-                    transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                    transition={{
+                      duration: 8,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
                   >
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-primary" />
                   </motion.div>
@@ -120,7 +140,11 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
                   <motion.div
                     className="absolute -inset-12 rounded-full border border-primary/30"
                     animate={{ rotate: -360 }}
-                    transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+                    transition={{
+                      duration: 5,
+                      repeat: Infinity,
+                      ease: "linear",
+                    }}
                   >
                     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-1.5 h-1.5 rounded-full bg-primary/80" />
                   </motion.div>
@@ -136,6 +160,7 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
                       strokeWidth="1"
                       className="text-primary/10"
                     />
+
                     <motion.circle
                       cx="50%"
                       cy="50%"
@@ -158,7 +183,10 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
                     >
                       {count}
                     </motion.span>
-                    <span className="absolute top-1/2 -translate-y-1/2 right-4 text-xl text-primary">%</span>
+
+                    <span className="absolute top-1/2 -translate-y-1/2 right-4 text-xl text-primary">
+                      %
+                    </span>
                   </div>
                 </motion.div>
               )}
@@ -178,15 +206,22 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
                     className="absolute w-4 h-4 rounded-full bg-primary"
                     initial={{ scale: 0 }}
                     animate={{ scale: [0, 80, 80], opacity: [1, 0.5, 0] }}
-                    transition={{ duration: 1.2, ease: [0.76, 0, 0.24, 1] }}
+                    transition={{
+                      duration: 1.2,
+                      ease: [0.76, 0, 0.24, 1],
+                    }}
                   />
 
-                  {/* Name reveal with mask */}
+                  {/* Name reveal */}
                   <div className="relative overflow-hidden">
                     <motion.div
                       initial={{ y: "100%" }}
                       animate={{ y: 0 }}
-                      transition={{ delay: 0.3, duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
+                      transition={{
+                        delay: 0.3,
+                        duration: 0.8,
+                        ease: [0.76, 0, 0.24, 1],
+                      }}
                     >
                       <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight">
                         {"SAISH".split("").map((letter, i) => (
@@ -198,7 +233,6 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
                             transition={{
                               delay: 0.4 + i * 0.08,
                               duration: 0.6,
-                              ease: [0.215, 0.61, 0.355, 1],
                             }}
                           >
                             {letter}
@@ -208,7 +242,7 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
                     </motion.div>
                   </div>
 
-                  {/* Subtitle with line animation */}
+                  {/* Subtitle */}
                   <div className="relative mt-6 flex items-center gap-4">
                     <motion.div
                       className="h-px bg-primary"
@@ -216,6 +250,7 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
                       animate={{ width: 60 }}
                       transition={{ delay: 0.9, duration: 0.6 }}
                     />
+
                     <motion.span
                       className="text-muted-foreground text-sm md:text-base tracking-[0.3em] uppercase"
                       initial={{ opacity: 0, y: 10 }}
@@ -224,6 +259,7 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
                     >
                       Full Stack Developer
                     </motion.span>
+
                     <motion.div
                       className="h-px bg-primary"
                       initial={{ width: 0 }}
@@ -231,20 +267,6 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
                       transition={{ delay: 0.9, duration: 0.6 }}
                     />
                   </div>
-
-                  {/* Decorative corner elements */}
-                  <motion.div
-                    className="absolute top-1/4 left-1/4 w-20 h-20 border-l-2 border-t-2 border-primary/30"
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.6, duration: 0.5 }}
-                  />
-                  <motion.div
-                    className="absolute bottom-1/4 right-1/4 w-20 h-20 border-r-2 border-b-2 border-primary/30"
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.6, duration: 0.5 }}
-                  />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -259,37 +281,59 @@ export function Preloader({ onComplete }: { onComplete: () => void }) {
               <div className="flex items-center gap-3 text-xs text-muted-foreground tracking-widest uppercase">
                 <motion.div
                   className="w-1 h-1 rounded-full bg-primary"
-                  animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
+                  animate={{
+                    scale: [1, 1.5, 1],
+                    opacity: [0.5, 1, 0.5],
+                  }}
                   transition={{ duration: 1.5, repeat: Infinity }}
                 />
-                <span>{phase === "counting" ? "Loading Experience" : "Welcome"}</span>
+
+                <span>
+                  {phase === "counting"
+                    ? "Loading Experience"
+                    : "Welcome"}
+                </span>
+
                 <motion.div
                   className="w-1 h-1 rounded-full bg-primary"
-                  animate={{ scale: [1, 1.5, 1], opacity: [0.5, 1, 0.5] }}
-                  transition={{ duration: 1.5, repeat: Infinity, delay: 0.5 }}
+                  animate={{
+                    scale: [1, 1.5, 1],
+                    opacity: [0.5, 1, 0.5],
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    delay: 0.5,
+                  }}
                 />
               </div>
             </motion.div>
-
           </div>
 
           {/* Exit curtains */}
           <AnimatePresence>
-            {phase === "exit" && (
+            {phase !== "counting" && (
               <>
                 <motion.div
                   className="absolute inset-y-0 left-0 w-1/2 bg-background z-50"
                   initial={{ x: "-100%" }}
                   animate={{ x: 0 }}
                   exit={{ x: "-100%" }}
-                  transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
+                  transition={{
+                    duration: 0.6,
+                    ease: [0.76, 0, 0.24, 1],
+                  }}
                 />
+
                 <motion.div
                   className="absolute inset-y-0 right-0 w-1/2 bg-background z-50"
                   initial={{ x: "100%" }}
                   animate={{ x: 0 }}
                   exit={{ x: "100%" }}
-                  transition={{ duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
+                  transition={{
+                    duration: 0.6,
+                    ease: [0.76, 0, 0.24, 1],
+                  }}
                 />
               </>
             )}
