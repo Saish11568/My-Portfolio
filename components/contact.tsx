@@ -5,6 +5,7 @@ import { ArrowUpRight, Github, Linkedin, Mail, Send } from "lucide-react"
 import { useRef, useState } from "react"
 import { LineReveal } from "./text-reveal"
 import { MagneticButton } from "./magnetic-button"
+import emailjs from "@emailjs/browser"
 
 const contactLinks = [
   {
@@ -52,7 +53,6 @@ function ContactLink({
       className="group relative block p-6 md:p-8 rounded-2xl border border-border bg-card/20 backdrop-blur-sm overflow-hidden"
       data-cursor="Click"
     >
-      {/* Animated background */}
       <motion.div
         className="absolute inset-0"
         style={{ backgroundColor: link.color }}
@@ -75,6 +75,7 @@ function ContactLink({
               style={{ color: isHovered ? "#000" : link.color }}
             />
           </motion.div>
+
           <span
             className="text-lg md:text-xl font-medium transition-colors"
             style={{ color: isHovered ? "#000" : "inherit" }}
@@ -82,6 +83,7 @@ function ContactLink({
             {link.label}
           </span>
         </div>
+
         <motion.div
           animate={{ x: isHovered ? 5 : 0, y: isHovered ? -5 : 0 }}
           transition={{ duration: 0.3 }}
@@ -93,7 +95,6 @@ function ContactLink({
         </motion.div>
       </div>
 
-      {/* Border animation */}
       <motion.div
         className="absolute bottom-0 left-0 h-[2px] bg-primary"
         initial={{ width: 0 }}
@@ -108,21 +109,55 @@ export function Contact() {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true })
 
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  })
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
+    })
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+
+    try {
+      await emailjs.send(
+        "service_gws4llj",
+        "template_mbhw24o",
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        "8wxPy01h8DRtMZjmy"
+      )
+
+      alert("Message sent successfully!")
+
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      })
+    } catch (error) {
+      console.error(error)
+      alert("Failed to send message.")
+    }
+  }
+
   return (
     <section
       ref={containerRef}
       className="py-32 px-6 md:px-12 lg:px-24 relative overflow-hidden"
       id="contact"
     >
-      {/* Background elements */}
-      <motion.div
-        initial={{ scale: 0, opacity: 0 }}
-        animate={isInView ? { scale: 1, opacity: 1 } : {}}
-        transition={{ duration: 1, delay: 0.5 }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[150px] pointer-events-none"
-      />
-
-      {/* Section header */}
       <div className="mb-20">
         <motion.span
           initial={{ opacity: 0, x: -20 }}
@@ -134,6 +169,7 @@ export function Contact() {
           <span className="w-8 h-[1px] bg-primary" />
           04 // Contact
         </motion.span>
+
         <LineReveal className="mt-4">
           <h2 className="text-4xl md:text-5xl font-bold">
             Let&apos;s <span className="text-primary">Connect</span>
@@ -142,7 +178,6 @@ export function Contact() {
       </div>
 
       <div className="grid lg:grid-cols-2 gap-16">
-        {/* Left side - CTA */}
         <div>
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
@@ -153,7 +188,9 @@ export function Contact() {
           >
             Have a project in mind?
             <br />
-            <span className="text-primary">Let&apos;s build it together.</span>
+            <span className="text-primary">
+              Let&apos;s build it together.
+            </span>
           </motion.h3>
 
           <motion.p
@@ -164,87 +201,90 @@ export function Contact() {
             className="text-lg text-muted-foreground leading-relaxed mb-8"
           >
             Open to freelance projects, collaborations, and interesting
-            opportunities. Whether you have a question or just want to say hi,
-            my inbox is always open.
+            opportunities.
           </motion.p>
 
-          {/* Contact Form */}
           <motion.form
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
             viewport={{ once: true }}
             className="mt-8 space-y-6"
-            onSubmit={(e) => {
-              e.preventDefault();
-              // Add form submission logic here if needed
-              alert("Message sent! (Demo)");
-            }}
+            onSubmit={handleSubmit}
           >
             <div className="space-y-2">
-              <label htmlFor="name" className="text-sm font-medium text-muted-foreground uppercase tracking-widest">
+              <label
+                htmlFor="name"
+                className="text-sm font-medium text-muted-foreground uppercase tracking-widest"
+              >
                 Your Name
               </label>
+
               <input
                 type="text"
                 id="name"
                 required
+                value={formData.name}
+                onChange={handleChange}
                 placeholder="e.g. Alex Chen"
-                className="w-full bg-card/20 border border-border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-foreground placeholder:text-muted-foreground/50"
+                className="w-full bg-card/20 border border-border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-foreground"
               />
             </div>
+
             <div className="space-y-2">
-              <label htmlFor="email" className="text-sm font-medium text-muted-foreground uppercase tracking-widest">
+              <label
+                htmlFor="email"
+                className="text-sm font-medium text-muted-foreground uppercase tracking-widest"
+              >
                 Email Address
               </label>
+
               <input
                 type="email"
                 id="email"
                 required
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="hello@example.com"
-                className="w-full bg-card/20 border border-border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-foreground placeholder:text-muted-foreground/50"
+                className="w-full bg-card/20 border border-border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-foreground"
               />
             </div>
+
             <div className="space-y-2">
-              <label htmlFor="message" className="text-sm font-medium text-muted-foreground uppercase tracking-widest">
+              <label
+                htmlFor="message"
+                className="text-sm font-medium text-muted-foreground uppercase tracking-widest"
+              >
                 Message
               </label>
+
               <textarea
                 id="message"
                 required
                 rows={4}
+                value={formData.message}
+                onChange={handleChange}
                 placeholder="Hey Saish, I'd love to..."
-                className="w-full bg-card/20 border border-border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-foreground placeholder:text-muted-foreground/50 resize-none"
+                className="w-full bg-card/20 border border-border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all text-foreground resize-none"
               />
             </div>
 
-            <MagneticButton
+            <button
+              type="submit"
               className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium group cursor-pointer w-full justify-center md:w-auto"
             >
               <Send className="w-5 h-5 transition-transform group-hover:-rotate-12" />
               Send Message
-            </MagneticButton>
+            </button>
           </motion.form>
         </div>
 
-        {/* Right side - Contact links */}
         <div className="space-y-4">
           {contactLinks.map((link, index) => (
             <ContactLink key={link.label} link={link} index={index} />
           ))}
         </div>
       </div>
-
-      {/* Large background text */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true }}
-        className="absolute -right-10 bottom-0 text-[150px] md:text-[200px] font-bold text-primary/[0.03] select-none pointer-events-none"
-      >
-        SAY HI
-      </motion.div>
     </section>
   )
 }
