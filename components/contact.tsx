@@ -49,14 +49,14 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="py-24 md:py-32 px-6 md:px-10 border-b border-[#E5DFD3]">
+    <section id="contact" className="py-24 md:py-32 px-6 md:px-10 border-b border-[#E5E7EB] bg-background">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="flex items-center justify-between mb-16 pb-6 border-b border-[#E5DFD3]">
+        <div className="flex items-center justify-between mb-16 pb-6 border-b border-[#E5E7EB]">
           <div>
             <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-primary font-mono mb-3">
               <span>05</span>
-              <span className="w-8 h-px bg-primary/40" />
+              <span className="w-8 h-px bg-primary/30" />
               <span>Correspondence</span>
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-foreground">
@@ -81,13 +81,13 @@ export function Contact() {
               </p>
             </div>
 
-            <div className="space-y-4 pt-4 border-t border-[#E5DFD3]">
+            <div className="space-y-4 pt-4 border-t border-[#E5E7EB]">
               <a
                 href="mailto:saishmalalikar5@gmail.com"
-                className="p-5 rounded-lg border border-[#E5DFD3] bg-card hover:border-primary/50 transition-colors flex items-center justify-between group"
+                className="p-5 rounded-lg border border-[#E5E7EB] bg-white hover:border-primary/50 transition-colors flex items-center justify-between group shadow-xs"
               >
                 <div className="flex items-center gap-3.5">
-                  <span className="p-2.5 rounded-md bg-[#F4EFE6] text-primary">
+                  <span className="p-2.5 rounded-md bg-blue-50 text-primary">
                     <Mail className="w-4 h-4" />
                   </span>
                   <div>
@@ -106,10 +106,10 @@ export function Contact() {
                 href="https://github.com/Saish11568"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-5 rounded-lg border border-[#E5DFD3] bg-card hover:border-primary/50 transition-colors flex items-center justify-between group"
+                className="p-5 rounded-lg border border-[#E5E7EB] bg-white hover:border-primary/50 transition-colors flex items-center justify-between group shadow-xs"
               >
                 <div className="flex items-center gap-3.5">
-                  <span className="p-2.5 rounded-md bg-[#F4EFE6] text-primary">
+                  <span className="p-2.5 rounded-md bg-blue-50 text-primary">
                     <Github className="w-4 h-4" />
                   </span>
                   <div>
@@ -128,10 +128,10 @@ export function Contact() {
                 href="https://www.linkedin.com/in/saish-malalikar-7861a8389"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-5 rounded-lg border border-[#E5DFD3] bg-card hover:border-primary/50 transition-colors flex items-center justify-between group"
+                className="p-5 rounded-lg border border-[#E5E7EB] bg-white hover:border-primary/50 transition-colors flex items-center justify-between group shadow-xs"
               >
                 <div className="flex items-center gap-3.5">
-                  <span className="p-2.5 rounded-md bg-[#F4EFE6] text-primary">
+                  <span className="p-2.5 rounded-md bg-blue-50 text-primary">
                     <Linkedin className="w-4 h-4" />
                   </span>
                   <div>
@@ -149,8 +149,8 @@ export function Contact() {
           </div>
 
           {/* Form */}
-          <div className="lg:col-span-7 lg:border-l lg:border-[#E5DFD3] lg:pl-12">
-            <div className="p-8 md:p-10 rounded-xl border border-[#E5DFD3] bg-card">
+          <div className="lg:col-span-7 lg:border-l lg:border-[#E5E7EB] lg:pl-12">
+            <div className="p-8 md:p-10 rounded-xl border border-[#E5E7EB] bg-white shadow-xs">
               <h3 className="font-serif text-xl font-medium text-foreground mb-6">
                 Send a Message
               </h3>
@@ -170,7 +170,7 @@ export function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="e.g. Alex Sharma"
-                    className="w-full px-4 py-2.5 rounded-md border border-[#E5DFD3] bg-[#FBF9F4] text-foreground text-sm focus:outline-hidden focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                    className="w-full px-4 py-2.5 rounded-md border border-[#E5E7EB] bg-white text-foreground text-sm focus:outline-hidden focus:border-primary focus:ring-1 focus:ring-primary transition-colors shadow-2xs"
                   />
                 </div>
 
@@ -188,7 +188,7 @@ export function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="alex@domain.com"
-                    className="w-full px-4 py-2.5 rounded-md border border-[#E5DFD3] bg-[#FBF9F4] text-foreground text-sm focus:outline-hidden focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                    className="w-full px-4 py-2.5 rounded-md border border-[#E5E7EB] bg-white text-foreground text-sm focus:outline-hidden focus:border-primary focus:ring-1 focus:ring-primary transition-colors shadow-2xs"
                   />
                 </div>
 
@@ -206,29 +206,29 @@ export function Contact() {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Write your note or project inquiry here..."
-                    className="w-full px-4 py-2.5 rounded-md border border-[#E5DFD3] bg-[#FBF9F4] text-foreground text-sm focus:outline-hidden focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none"
+                    className="w-full px-4 py-2.5 rounded-md border border-[#E5E7EB] bg-white text-foreground text-sm focus:outline-hidden focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none shadow-2xs"
                   />
                 </div>
 
                 <button
                   type="submit"
                   disabled={status === "sending"}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 disabled:opacity-50 transition-colors cursor-pointer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-full bg-primary text-white text-sm font-medium hover:bg-blue-700 disabled:opacity-50 transition-colors cursor-pointer shadow-xs"
                 >
                   <Send className="w-4 h-4" />
                   <span>{status === "sending" ? "Transmitting..." : "Send Message"}</span>
                 </button>
 
                 {status === "success" && (
-                  <div className="p-3.5 rounded-md bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs flex items-center gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <div className="p-3.5 rounded-md bg-blue-50 border border-blue-200 text-blue-900 text-xs flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
                     <span>{statusMessage}</span>
                   </div>
                 )}
 
                 {status === "error" && (
-                  <div className="p-3.5 rounded-md bg-amber-50 border border-amber-200 text-amber-800 text-xs flex items-center gap-2">
-                    <AlertCircle className="w-4 h-4 text-amber-600 shrink-0" />
+                  <div className="p-3.5 rounded-md bg-red-50 border border-red-200 text-red-900 text-xs flex items-center gap-2">
+                    <AlertCircle className="w-4 h-4 text-red-600 shrink-0" />
                     <span>{statusMessage}</span>
                   </div>
                 )}

@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { Github, ArrowUpRight, CheckCircle2, Layers } from "lucide-react"
+import { Github, ArrowUpRight } from "lucide-react"
 
 interface Project {
   id: string
@@ -114,10 +114,10 @@ const projects: Project[] = [
 function ProjectPreviewVisual({ type }: { type: Project["previewType"] }) {
   if (type === "transit") {
     return (
-      <div className="w-full h-full p-6 md:p-8 flex flex-col justify-between bg-[#F4EFE6]/70 border-b lg:border-b-0 lg:border-r border-[#E5DFD3] select-none">
-        <div className="flex items-center justify-between border-b border-[#E5DFD3] pb-4">
+      <div className="w-full h-full p-6 md:p-8 flex flex-col justify-between bg-[#F9FAFB] border-b lg:border-b-0 lg:border-r border-[#E5E7EB] select-none">
+        <div className="flex items-center justify-between border-b border-[#E5E7EB] pb-4">
           <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-700 animate-pulse" />
+            <span className="w-2.5 h-2.5 rounded-full bg-primary animate-pulse" />
             <span className="text-xs font-mono font-medium text-foreground uppercase tracking-wider">
               Transit Route #42A — Active
             </span>
@@ -134,28 +134,28 @@ function ProjectPreviewVisual({ type }: { type: Project["previewType"] }) {
             <span className="text-primary font-semibold">Live: Stop 4 (Market)</span>
             <span>Campus Gate</span>
           </div>
-          <div className="relative w-full h-2 bg-[#E5DFD3] rounded-full overflow-hidden">
+          <div className="relative w-full h-2 bg-[#E5E7EB] rounded-full overflow-hidden">
             <div className="absolute left-0 top-0 bottom-0 w-3/5 bg-primary rounded-full" />
           </div>
           <div className="grid grid-cols-3 gap-2 pt-2">
-            <div className="p-2.5 rounded bg-white/80 border border-[#E5DFD3]">
+            <div className="p-2.5 rounded bg-white border border-[#E5E7EB] shadow-2xs">
               <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Next Stop</div>
               <div className="text-xs font-semibold text-foreground">City Central</div>
             </div>
-            <div className="p-2.5 rounded bg-white/80 border border-[#E5DFD3]">
+            <div className="p-2.5 rounded bg-white border border-[#E5E7EB] shadow-2xs">
               <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Est. Arrival</div>
               <div className="text-xs font-semibold text-primary">~4 Mins</div>
             </div>
-            <div className="p-2.5 rounded bg-white/80 border border-[#E5DFD3]">
+            <div className="p-2.5 rounded bg-white border border-[#E5E7EB] shadow-2xs">
               <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Occupancy</div>
               <div className="text-xs font-semibold text-foreground">Moderate (64%)</div>
             </div>
           </div>
         </div>
 
-        <div className="text-[11px] font-mono text-muted-foreground flex items-center justify-between pt-3 border-t border-[#E5DFD3]">
+        <div className="text-[11px] font-mono text-muted-foreground flex items-center justify-between pt-3 border-t border-[#E5E7EB]">
           <span>Interface: Commuter Real-Time Map</span>
-          <span className="text-primary">BusTrack v1.0</span>
+          <span className="text-primary font-medium">BusTrack v1.0</span>
         </div>
       </div>
     )
@@ -163,15 +163,15 @@ function ProjectPreviewVisual({ type }: { type: Project["previewType"] }) {
 
   if (type === "agri") {
     return (
-      <div className="w-full h-full p-6 md:p-8 flex flex-col justify-between bg-[#F4EFE6]/70 border-b lg:border-b-0 lg:border-r border-[#E5DFD3] select-none">
-        <div className="flex items-center justify-between border-b border-[#E5DFD3] pb-4">
+      <div className="w-full h-full p-6 md:p-8 flex flex-col justify-between bg-[#F9FAFB] border-b lg:border-b-0 lg:border-r border-[#E5E7EB] select-none">
+        <div className="flex items-center justify-between border-b border-[#E5E7EB] pb-4">
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-primary" />
             <span className="text-xs font-mono font-medium text-foreground uppercase tracking-wider">
               Batch #AG-2024-8841
             </span>
           </div>
-          <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-primary/10 text-primary font-medium">
+          <span className="text-[11px] font-mono px-2 py-0.5 rounded bg-blue-50 text-primary font-medium">
             Status: Verified
           </span>
         </div>
@@ -179,28 +179,28 @@ function ProjectPreviewVisual({ type }: { type: Project["previewType"] }) {
         {/* Chain custody timeline */}
         <div className="my-6 space-y-3">
           <div className="space-y-2">
-            <div className="flex items-center justify-between p-2 rounded bg-white/90 border border-[#E5DFD3] text-xs">
+            <div className="flex items-center justify-between p-2 rounded bg-white border border-[#E5E7EB] text-xs shadow-2xs">
               <span className="font-mono text-primary font-medium">01. Origin Farm</span>
               <span className="text-muted-foreground font-mono">Harvest Logged · Day 1</span>
             </div>
-            <div className="flex items-center justify-between p-2 rounded bg-white/90 border border-[#E5DFD3] text-xs">
+            <div className="flex items-center justify-between p-2 rounded bg-white border border-[#E5E7EB] text-xs shadow-2xs">
               <span className="font-mono text-primary font-medium">02. Regional Hub</span>
               <span className="text-muted-foreground font-mono">Cold Storage QA · Day 2</span>
             </div>
-            <div className="flex items-center justify-between p-2 rounded bg-primary/10 border border-primary/30 text-xs">
+            <div className="flex items-center justify-between p-2 rounded bg-blue-50/70 border border-blue-200 text-xs">
               <span className="font-mono text-primary font-bold">03. Retail Hub</span>
               <span className="text-primary font-mono font-medium">In Distribution · Active</span>
             </div>
           </div>
-          <div className="p-2.5 rounded bg-white/80 border border-[#E5DFD3] flex items-center justify-between text-xs font-mono">
+          <div className="p-2.5 rounded bg-white border border-[#E5E7EB] flex items-center justify-between text-xs font-mono shadow-2xs">
             <span className="text-muted-foreground">Stakeholder View</span>
             <span className="text-foreground font-medium">Role: Distributor Dashboard</span>
           </div>
         </div>
 
-        <div className="text-[11px] font-mono text-muted-foreground flex items-center justify-between pt-3 border-t border-[#E5DFD3]">
+        <div className="text-[11px] font-mono text-muted-foreground flex items-center justify-between pt-3 border-t border-[#E5E7EB]">
           <span>Protocol: FarmChain Batch Ledger</span>
-          <span className="text-primary">Traceability Verified</span>
+          <span className="text-primary font-medium">Traceability Verified</span>
         </div>
       </div>
     )
@@ -208,8 +208,8 @@ function ProjectPreviewVisual({ type }: { type: Project["previewType"] }) {
 
   if (type === "print") {
     return (
-      <div className="w-full h-full p-6 md:p-8 flex flex-col justify-between bg-[#F4EFE6]/70 border-b lg:border-b-0 lg:border-r border-[#E5DFD3] select-none">
-        <div className="flex items-center justify-between border-b border-[#E5DFD3] pb-4">
+      <div className="w-full h-full p-6 md:p-8 flex flex-col justify-between bg-[#F9FAFB] border-b lg:border-b-0 lg:border-r border-[#E5E7EB] select-none">
+        <div className="flex items-center justify-between border-b border-[#E5E7EB] pb-4">
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 rounded-full bg-primary" />
             <span className="text-xs font-mono font-medium text-foreground uppercase tracking-wider">
@@ -223,40 +223,40 @@ function ProjectPreviewVisual({ type }: { type: Project["previewType"] }) {
 
         {/* Queue table preview */}
         <div className="my-6 space-y-2 font-mono text-xs">
-          <div className="p-2 rounded bg-white/90 border border-[#E5DFD3] flex items-center justify-between">
+          <div className="p-2 rounded bg-white border border-[#E5E7EB] flex items-center justify-between shadow-2xs">
             <div>
               <span className="text-foreground font-semibold">ORD-1092</span>
               <span className="text-muted-foreground ml-2 text-[11px]">Thesis_Report.pdf</span>
             </div>
-            <span className="px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 text-[10px] font-medium">
+            <span className="px-1.5 py-0.5 rounded bg-blue-50 text-primary text-[10px] font-medium">
               Completed
             </span>
           </div>
 
-          <div className="p-2 rounded bg-primary/10 border border-primary/30 flex items-center justify-between">
+          <div className="p-2 rounded bg-blue-50/80 border border-blue-200 flex items-center justify-between">
             <div>
               <span className="text-primary font-semibold">ORD-1093</span>
               <span className="text-foreground ml-2 text-[11px]">Lab_Manual_v2.docx</span>
             </div>
-            <span className="px-1.5 py-0.5 rounded bg-primary text-primary-foreground text-[10px] font-medium">
+            <span className="px-1.5 py-0.5 rounded bg-primary text-white text-[10px] font-medium">
               Printing (34/50)
             </span>
           </div>
 
-          <div className="p-2 rounded bg-white/90 border border-[#E5DFD3] flex items-center justify-between">
+          <div className="p-2 rounded bg-white border border-[#E5E7EB] flex items-center justify-between shadow-2xs">
             <div>
               <span className="text-foreground font-semibold">ORD-1094</span>
               <span className="text-muted-foreground ml-2 text-[11px]">Architecture_Dwg.pdf</span>
             </div>
-            <span className="px-1.5 py-0.5 rounded bg-amber-100 text-amber-800 text-[10px] font-medium">
+            <span className="px-1.5 py-0.5 rounded bg-gray-100 text-gray-700 text-[10px] font-medium">
               Queued
             </span>
           </div>
         </div>
 
-        <div className="text-[11px] font-mono text-muted-foreground flex items-center justify-between pt-3 border-t border-[#E5DFD3]">
+        <div className="text-[11px] font-mono text-muted-foreground flex items-center justify-between pt-3 border-t border-[#E5E7EB]">
           <span>Role: Shopkeeper Console</span>
-          <span className="text-primary">Express.js Backend</span>
+          <span className="text-primary font-medium">Express.js Backend</span>
         </div>
       </div>
     )
@@ -264,21 +264,21 @@ function ProjectPreviewVisual({ type }: { type: Project["previewType"] }) {
 
   if (type === "vendor") {
     return (
-      <div className="w-full h-40 p-5 flex flex-col justify-between bg-[#F4EFE6]/60 border-b border-[#E5DFD3] select-none">
+      <div className="w-full h-40 p-5 flex flex-col justify-between bg-[#F9FAFB] border-b border-[#E5E7EB] select-none">
         <div className="flex items-center justify-between text-xs font-mono">
           <span className="font-semibold text-foreground uppercase">Merchant Catalog View</span>
           <span className="text-muted-foreground">32 Items Active</span>
         </div>
         <div className="grid grid-cols-3 gap-2 text-xs font-mono">
-          <div className="p-2 rounded bg-white border border-[#E5DFD3]">
+          <div className="p-2 rounded bg-white border border-[#E5E7EB] shadow-2xs">
             <div className="text-[10px] text-muted-foreground">Category</div>
             <div className="font-medium text-foreground">Produce</div>
           </div>
-          <div className="p-2 rounded bg-white border border-[#E5DFD3]">
+          <div className="p-2 rounded bg-white border border-[#E5E7EB] shadow-2xs">
             <div className="text-[10px] text-muted-foreground">Stock</div>
             <div className="font-medium text-foreground">120 Units</div>
           </div>
-          <div className="p-2 rounded bg-white border border-[#E5DFD3]">
+          <div className="p-2 rounded bg-white border border-[#E5E7EB] shadow-2xs">
             <div className="text-[10px] text-muted-foreground">Routing</div>
             <div className="font-medium text-primary">Direct</div>
           </div>
@@ -289,21 +289,21 @@ function ProjectPreviewVisual({ type }: { type: Project["previewType"] }) {
 
   // Hunger redistribution preview
   return (
-    <div className="w-full h-40 p-5 flex flex-col justify-between bg-[#F4EFE6]/60 border-b border-[#E5DFD3] select-none">
+    <div className="w-full h-40 p-5 flex flex-col justify-between bg-[#F9FAFB] border-b border-[#E5E7EB] select-none">
       <div className="flex items-center justify-between text-xs font-mono">
         <span className="font-semibold text-foreground uppercase">Redistribution Logistics</span>
-        <span className="text-emerald-800 font-medium">Relief Matched</span>
+        <span className="text-primary font-medium">Relief Matched</span>
       </div>
       <div className="grid grid-cols-3 gap-2 text-xs font-mono">
-        <div className="p-2 rounded bg-white border border-[#E5DFD3]">
+        <div className="p-2 rounded bg-white border border-[#E5E7EB] shadow-2xs">
           <div className="text-[10px] text-muted-foreground">Provider</div>
           <div className="font-medium text-foreground">Community Pantry</div>
         </div>
-        <div className="p-2 rounded bg-white border border-[#E5DFD3]">
+        <div className="p-2 rounded bg-white border border-[#E5E7EB] shadow-2xs">
           <div className="text-[10px] text-muted-foreground">Portions</div>
           <div className="font-medium text-primary">85 Meals</div>
         </div>
-        <div className="p-2 rounded bg-white border border-[#E5DFD3]">
+        <div className="p-2 rounded bg-white border border-[#E5E7EB] shadow-2xs">
           <div className="text-[10px] text-muted-foreground">Transit</div>
           <div className="font-medium text-foreground">Scheduled</div>
         </div>
@@ -317,14 +317,14 @@ export function Projects() {
   const secondaryProjects = projects.filter((p) => !p.featured)
 
   return (
-    <section id="projects" className="py-24 md:py-32 px-6 md:px-10 border-b border-[#E5DFD3]">
+    <section id="projects" className="py-24 md:py-32 px-6 md:px-10 border-b border-[#E5E7EB] bg-background">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="flex items-center justify-between mb-16 pb-6 border-b border-[#E5DFD3]">
+        <div className="flex items-center justify-between mb-16 pb-6 border-b border-[#E5E7EB]">
           <div>
             <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-primary font-mono mb-3">
               <span>02</span>
-              <span className="w-8 h-px bg-primary/40" />
+              <span className="w-8 h-px bg-primary/30" />
               <span>Selected Works</span>
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-foreground">
@@ -342,7 +342,7 @@ export function Projects() {
           {featuredProjects.map((project, idx) => (
             <article
               key={project.id}
-              className="rounded-xl border border-[#E5DFD3] bg-card overflow-hidden hover:border-primary/40 transition-colors shadow-2xs"
+              className="rounded-xl border border-[#E5E7EB] bg-white overflow-hidden hover:border-primary/40 transition-colors shadow-xs"
             >
               <div className="grid lg:grid-cols-12 items-stretch">
                 {/* Visual Preview */}
@@ -363,7 +363,7 @@ export function Projects() {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-xs font-medium text-foreground hover:text-primary transition-colors border border-border px-3 py-1 rounded-full hover:border-primary/40"
+                          className="inline-flex items-center gap-1.5 text-xs font-medium text-foreground hover:text-primary transition-colors border border-[#E5E7EB] px-3 py-1 rounded-full hover:border-primary/40 bg-white"
                           aria-label={`View source code for ${project.title}`}
                         >
                           <Github className="w-3.5 h-3.5" />
@@ -385,7 +385,7 @@ export function Projects() {
                     </p>
 
                     {/* Problem Solved */}
-                    <div className="mb-6 p-4 rounded-md bg-[#F4EFE6]/50 border border-[#E5DFD3]">
+                    <div className="mb-6 p-4 rounded-md bg-[#F9FAFB] border border-[#E5E7EB]">
                       <h4 className="text-[11px] uppercase tracking-wider text-muted-foreground font-semibold mb-1">
                         Problem Addressed
                       </h4>
@@ -414,11 +414,11 @@ export function Projects() {
                   </div>
 
                   {/* Tech Stack */}
-                  <div className="pt-6 border-t border-[#E5DFD3] flex flex-wrap items-center gap-2">
+                  <div className="pt-6 border-t border-[#E5E7EB] flex flex-wrap items-center gap-2">
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="text-xs font-mono px-3 py-1 rounded-full bg-[#F3ECE1] text-foreground/90 border border-[#E5DFD3]"
+                        className="text-xs font-mono px-3 py-1 rounded-full bg-[#F3F4F6] text-foreground/90 border border-[#E5E7EB]"
                       >
                         {tech}
                       </span>
@@ -431,9 +431,9 @@ export function Projects() {
         </div>
 
         {/* Other Noteworthy Projects */}
-        <div className="pt-12 border-t border-[#E5DFD3]">
+        <div className="pt-12 border-t border-[#E5E7EB]">
           <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-muted-foreground font-mono mb-8">
-            <span className="w-6 h-px bg-[#E5DFD3]" />
+            <span className="w-6 h-px bg-[#E5E7EB]" />
             <span>Additional Authentic Projects</span>
           </div>
 
@@ -441,7 +441,7 @@ export function Projects() {
             {secondaryProjects.map((project) => (
               <article
                 key={project.id}
-                className="rounded-xl border border-[#E5DFD3] bg-card overflow-hidden hover:border-primary/40 transition-colors flex flex-col justify-between"
+                className="rounded-xl border border-[#E5E7EB] bg-white overflow-hidden hover:border-primary/40 transition-colors flex flex-col justify-between shadow-xs"
               >
                 <div>
                   <ProjectPreviewVisual type={project.previewType} />
@@ -475,11 +475,11 @@ export function Projects() {
                 </div>
 
                 <div className="p-6 md:p-8 pt-0">
-                  <div className="pt-4 border-t border-[#E5DFD3] flex flex-wrap gap-2">
+                  <div className="pt-4 border-t border-[#E5E7EB] flex flex-wrap gap-2">
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="text-[11px] font-mono px-2.5 py-0.5 rounded bg-[#F3ECE1] text-foreground/80 border border-[#E5DFD3]"
+                        className="text-[11px] font-mono px-2.5 py-0.5 rounded bg-[#F3F4F6] text-foreground/80 border border-[#E5E7EB]"
                       >
                         {tech}
                       </span>
