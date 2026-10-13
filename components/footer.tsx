@@ -8,9 +8,9 @@ export function Footer() {
   }
 
   return (
-    <footer className="py-16 md:py-20 px-6 md:px-10 bg-[#F9FAFB] border-t border-[#E5E7EB]">
+    <footer className="py-16 md:py-20 px-6 md:px-10 bg-[#F6F3EC] border-t border-[#E5DFD3]">
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row items-baseline justify-between gap-8 pb-10 border-b border-[#E5E7EB]">
+        <div className="flex flex-col md:flex-row items-baseline justify-between gap-8 pb-10 border-b border-[#E5DFD3]">
           <div>
             <span className="font-serif text-2xl font-normal text-foreground">
               Saish Malalikar

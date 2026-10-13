@@ -22,12 +22,12 @@ export function About() {
   ]
 
   return (
-    <section id="about" className="py-24 md:py-32 px-6 md:px-10 border-b border-[#E5E7EB] bg-background">
+    <section id="about" className="py-24 md:py-32 px-6 md:px-10 border-b border-[#E5DFD3]">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-primary font-mono mb-4">
           <span>01</span>
-          <span className="w-8 h-px bg-primary/30" />
+          <span className="w-8 h-px bg-primary/40" />
           <span>About</span>
         </div>
 
@@ -50,7 +50,7 @@ export function About() {
               Rather than building purely theoretical demos, I focus my project work on solving practical coordination problems—including agricultural supply chain tracking (<span className="text-foreground font-medium">AgriSmart / FarmChain</span>), multi-role order management (<span className="text-foreground font-medium">PrintShop</span>), and real-time public transit tracking (<span className="text-foreground font-medium">BusTrack</span>).
             </p>
 
-            <div className="pt-8 mt-8 border-t border-[#E5E7EB] space-y-5">
+            <div className="pt-8 mt-8 border-t border-[#E5DFD3] space-y-5">
               <h3 className="text-xs uppercase tracking-widest text-muted-foreground font-sans font-semibold">
                 Development Philosophy
               </h3>
@@ -59,7 +59,7 @@ export function About() {
                 {principles.map((principle) => (
                   <div
                     key={principle.title}
-                    className="p-5 rounded-lg border border-[#E5E7EB] bg-white shadow-2xs"
+                    className="p-5 rounded-lg border border-[#E5DFD3] bg-card/60 hover:border-primary/40 hover:shadow-xs transition-all duration-200"
                   >
                     <h4 className="font-serif text-lg font-medium text-foreground mb-1.5 flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary" />

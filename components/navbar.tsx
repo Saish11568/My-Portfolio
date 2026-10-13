@@ -41,8 +41,8 @@ export function Navbar() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-white/95 backdrop-blur-md border-b border-[#E5E7EB] py-3.5 shadow-xs"
-            : "bg-white/80 backdrop-blur-xs py-5 border-b border-transparent"
+            ? "bg-[#FBF9F4]/92 backdrop-blur-md border-b border-[#E5DFD3] py-3.5 shadow-xs"
+            : "bg-[#FBF9F4]/60 backdrop-blur-xs py-5 border-b border-transparent"
         }`}
       >
         <div className="max-w-6xl mx-auto px-6 md:px-10 flex items-center justify-between">
@@ -55,7 +55,7 @@ export function Navbar() {
             <span className="font-serif text-xl md:text-2xl font-normal tracking-tight">
               Saish Malalikar
             </span>
-            <span className="hidden sm:inline-block text-[11px] uppercase tracking-widest text-muted-foreground border-l border-[#E5E7EB] pl-3 font-sans">
+            <span className="hidden sm:inline-block text-[11px] uppercase tracking-widest text-muted-foreground border-l border-[#E5DFD3] pl-3 font-sans">
               Computer Science & Eng.
             </span>
           </a>
@@ -74,7 +74,7 @@ export function Navbar() {
 
             <a
               href="#contact"
-              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-primary text-primary text-xs uppercase tracking-widest hover:bg-primary hover:text-white transition-all duration-200"
+              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full border border-primary/30 text-primary text-xs uppercase tracking-widest hover:bg-primary hover:text-primary-foreground transition-all duration-200"
             >
               Get in Touch
             </a>
@@ -101,7 +101,7 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 md:hidden bg-white pt-24 px-6 flex flex-col justify-between pb-10"
+            className="fixed inset-0 z-40 md:hidden bg-[#FBF9F4] pt-24 px-6 flex flex-col justify-between pb-10"
           >
             <nav className="flex flex-col gap-6" aria-label="Mobile Navigation">
               <span className="text-[11px] uppercase tracking-widest text-muted-foreground font-mono">
@@ -112,7 +112,7 @@ export function Navbar() {
                   key={item.label}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="font-serif text-3xl text-foreground hover:text-primary transition-colors flex items-center justify-between py-2 border-b border-[#E5E7EB]"
+                  className="font-serif text-3xl text-foreground hover:text-primary transition-colors flex items-center justify-between py-2 border-b border-[#E5DFD3]"
                 >
                   <span>{item.label}</span>
                   <span className="text-xs font-mono text-muted-foreground">
@@ -122,7 +122,7 @@ export function Navbar() {
               ))}
             </nav>
 
-            <div className="pt-8 border-t border-[#E5E7EB] flex flex-col gap-4">
+            <div className="pt-8 border-t border-[#E5DFD3] flex flex-col gap-4">
               <div className="flex items-center justify-between text-xs text-muted-foreground">
                 <a
                   href="https://github.com/Saish11568"

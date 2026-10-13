@@ -5,14 +5,14 @@ import { ArrowDown, Github, Linkedin, Mail, ArrowUpRight } from "lucide-react"
 
 export function Hero() {
   return (
-    <section className="relative pt-36 md:pt-44 pb-20 md:pb-28 px-6 md:px-10 border-b border-[#E5E7EB] bg-background">
+    <section className="relative pt-36 md:pt-44 pb-20 md:pb-28 px-6 md:px-10 border-b border-[#E5DFD3]">
       <div className="max-w-6xl mx-auto">
-        {/* Sub-header / Metadata bar */}
+        {/* Editorial Sub-header / Metadata bar */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex flex-wrap items-center justify-between gap-4 pb-8 mb-10 border-b border-[#E5E7EB] text-xs uppercase tracking-widest text-muted-foreground font-sans"
+          className="flex flex-wrap items-center justify-between gap-4 pb-8 mb-10 border-b border-[#E5DFD3] text-xs uppercase tracking-widest text-muted-foreground font-sans"
         >
           <div className="flex items-center gap-3">
             <span className="w-2 h-2 rounded-full bg-primary inline-block" />
@@ -49,21 +49,19 @@ export function Hero() {
               transition={{ duration: 0.7, delay: 0.3 }}
               className="mt-10 flex flex-wrap items-center gap-4"
             >
-              {/* Primary button: blue background with white text */}
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-white text-sm font-medium hover:bg-blue-700 transition-colors shadow-xs"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-all duration-200 shadow-xs hover:scale-[1.02] active:scale-[0.98]"
               >
                 <span>View Projects</span>
                 <ArrowDown className="w-4 h-4" />
               </a>
 
-              {/* Secondary button: white background, dark text and a subtle gray border */}
               <a
                 href="https://github.com/Saish11568"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#E5E7EB] bg-white text-foreground text-sm font-medium hover:bg-gray-50 hover:border-gray-300 transition-colors shadow-xs"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-border bg-card/60 text-foreground text-sm font-medium hover:bg-accent hover:border-primary/40 transition-all duration-200 shadow-xs hover:scale-[1.02] active:scale-[0.98]"
               >
                 <Github className="w-4 h-4" />
                 <span>GitHub Profile</span>
@@ -84,7 +82,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35 }}
-            className="lg:col-span-4 lg:border-l lg:border-[#E5E7EB] lg:pl-10 space-y-8"
+            className="lg:col-span-4 lg:border-l lg:border-[#E5DFD3] lg:pl-10 space-y-8"
           >
             <div>
               <h2 className="text-xs uppercase tracking-widest text-muted-foreground font-sans font-semibold mb-3">
@@ -95,7 +93,7 @@ export function Hero() {
               </p>
             </div>
 
-            <div className="pt-6 border-t border-[#E5E7EB]">
+            <div className="pt-6 border-t border-[#E5DFD3]">
               <h2 className="text-xs uppercase tracking-widest text-muted-foreground font-sans font-semibold mb-3">
                 Connect
               </h2>
@@ -110,7 +108,7 @@ export function Hero() {
                     <Github className="w-4 h-4 text-muted-foreground group-hover:text-primary" />
                     <span>github.com/Saish11568</span>
                   </span>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-muted-foreground" />
+                  <ArrowUpRight className="w-3.5 h-3.5 text-muted-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </a>
 
                 <a
@@ -123,7 +121,7 @@ export function Hero() {
                     <Linkedin className="w-4 h-4 text-muted-foreground group-hover:text-primary" />
                     <span>LinkedIn Profile</span>
                   </span>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-muted-foreground" />
+                  <ArrowUpRight className="w-3.5 h-3.5 text-muted-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </a>
 
                 <a
@@ -134,7 +132,7 @@ export function Hero() {
                     <Mail className="w-4 h-4 text-muted-foreground group-hover:text-primary" />
                     <span>saishmalalikar5@gmail.com</span>
                   </span>
-                  <ArrowUpRight className="w-3.5 h-3.5 text-muted-foreground" />
+                  <ArrowUpRight className="w-3.5 h-3.5 text-muted-foreground group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </a>
               </div>
             </div>

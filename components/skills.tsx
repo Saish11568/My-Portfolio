@@ -65,14 +65,14 @@ const skillCategories: SkillCategory[] = [
 
 export function Skills() {
   return (
-    <section id="skills" className="py-24 md:py-32 px-6 md:px-10 border-b border-[#E5E7EB] bg-background">
+    <section id="skills" className="py-24 md:py-32 px-6 md:px-10 border-b border-[#E5DFD3]">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="flex items-center justify-between mb-16 pb-6 border-b border-[#E5E7EB]">
+        <div className="flex items-center justify-between mb-16 pb-6 border-b border-[#E5DFD3]">
           <div>
             <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-primary font-mono mb-3">
               <span>03</span>
-              <span className="w-8 h-px bg-primary/30" />
+              <span className="w-8 h-px bg-primary/40" />
               <span>Technical Skills</span>
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-foreground">
@@ -92,11 +92,11 @@ export function Skills() {
             return (
               <div
                 key={category.title}
-                className="p-7 rounded-xl border border-[#E5E7EB] bg-white hover:border-primary/40 transition-colors flex flex-col justify-between shadow-xs"
+                className="p-7 rounded-xl border border-[#E5DFD3] bg-card hover:border-primary/40 hover:shadow-xs transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="p-2 rounded-md bg-blue-50 text-primary">
+                    <span className="p-2 rounded-md bg-[#F4EFE6] text-primary group-hover:bg-[#EBF3F1] transition-colors">
                       <Icon className="w-4 h-4" />
                     </span>
                     <span className="text-[11px] font-mono text-muted-foreground">
@@ -104,7 +104,7 @@ export function Skills() {
                     </span>
                   </div>
 
-                  <h3 className="font-serif text-xl font-medium text-foreground mb-2">
+                  <h3 className="font-serif text-xl font-medium text-foreground mb-2 group-hover:text-primary transition-colors">
                     {category.title}
                   </h3>
                   <p className="text-xs text-muted-foreground leading-relaxed mb-6 font-sans">
@@ -112,11 +112,11 @@ export function Skills() {
                   </p>
                 </div>
 
-                <div className="space-y-2 pt-4 border-t border-[#E5E7EB]">
+                <div className="space-y-2 pt-4 border-t border-[#E5DFD3]">
                   {category.skills.map((skill) => (
                     <div
                       key={skill.name}
-                      className="p-2.5 rounded bg-[#F9FAFB] border border-[#E5E7EB] flex flex-col gap-0.5"
+                      className="p-2.5 rounded bg-[#F8F6F0] border border-[#EBE5DB] flex flex-col gap-0.5 hover:border-primary/40 hover:bg-[#EBF3F1] transition-colors"
                     >
                       <div className="flex items-center justify-between">
                         <span className="text-xs font-medium text-foreground">

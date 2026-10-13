@@ -21,14 +21,14 @@ export function Education() {
   ]
 
   return (
-    <section id="education" className="py-24 md:py-32 px-6 md:px-10 border-b border-[#E5E7EB] bg-background">
+    <section id="education" className="py-24 md:py-32 px-6 md:px-10 border-b border-[#E5DFD3]">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="flex items-center justify-between mb-16 pb-6 border-b border-[#E5E7EB]">
+        <div className="flex items-center justify-between mb-16 pb-6 border-b border-[#E5DFD3]">
           <div>
             <div className="flex items-center gap-3 text-xs uppercase tracking-widest text-primary font-mono mb-3">
               <span>04</span>
-              <span className="w-8 h-px bg-primary/30" />
+              <span className="w-8 h-px bg-primary/40" />
               <span>Background</span>
             </div>
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-normal tracking-tight text-foreground">
@@ -46,11 +46,11 @@ export function Education() {
           {educationItems.map((item, index) => (
             <div
               key={index}
-              className="p-8 md:p-10 rounded-xl border border-[#E5E7EB] bg-white hover:border-primary/40 transition-colors shadow-xs"
+              className="p-8 md:p-10 rounded-xl border border-[#E5DFD3] bg-card hover:border-primary/40 hover:shadow-xs transition-all duration-300"
             >
               <div className="grid lg:grid-cols-12 gap-8 items-start">
                 <div className="lg:col-span-5 space-y-2">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-primary text-xs font-mono mb-2">
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#F4EFE6] text-primary text-xs font-mono mb-2">
                     <GraduationCap className="w-3.5 h-3.5" />
                     <span>{item.status}</span>
                   </div>
@@ -66,7 +66,7 @@ export function Education() {
                   </p>
                 </div>
 
-                <div className="lg:col-span-7 space-y-6 lg:border-l lg:border-[#E5E7EB] lg:pl-10">
+                <div className="lg:col-span-7 space-y-6 lg:border-l lg:border-[#E5DFD3] lg:pl-10">
                   <p className="text-sm md:text-base text-foreground/80 leading-relaxed font-sans">
                     {item.description}
                   </p>
@@ -79,7 +79,7 @@ export function Education() {
                       {item.highlights.map((highlight) => (
                         <span
                           key={highlight}
-                          className="text-xs px-3 py-1 rounded-md bg-[#F9FAFB] text-foreground/85 border border-[#E5E7EB]"
+                          className="text-xs px-3 py-1 rounded-md bg-[#F8F6F0] text-foreground/85 border border-[#EBE5DB] hover:border-primary/40 hover:bg-[#EBF3F1] transition-colors"
                         >
                           {highlight}
                         </span>
